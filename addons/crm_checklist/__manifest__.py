@@ -10,6 +10,7 @@
         ],
     },
     'data': [
+        'views/crm_checklist_config.xml',
         'views/crm_lead_views.xml',
         'security/ir.model.access.csv',
     ],

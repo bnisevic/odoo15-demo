@@ -10,9 +10,9 @@
                         <field name="checklist_progress" widget="progressbar" />
                     </div>
                     <field name="checklist_ids">
-                        <tree editable="bottom">
-                            <field name="is_checked" widget="boolean_toggle"/>
-                            <field name="name"/>
+                        <tree editable="false" delete="false" create="false">
+                            <field name="is_checked" widget="boolean_toggle" />
+                            <field name="config_id"/>
                         </tree>
                     </field>
                 </page>

@@ -1,0 +1,24 @@
+<odoo>
+    <record id="crm_checklist_config_view_tree" model="ir.ui.view">
+        <field name="name">crm.checklist.config.view.tree</field>
+        <field name="model">crm.checklist.config</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crm_checklist_config_action" model="ir.actions.act_window">
+        <field name="name">Checklist Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.checklist.config</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="crm_checklist_config_menu"
+              name="Checklist"
+              parent="crm.crm_menu_config"
+              action="crm_checklist_config_action"
+              sequence="30"/>
+</odoo>

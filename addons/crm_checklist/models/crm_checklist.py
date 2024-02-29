@@ -1,9 +1,19 @@
-from odoo import models, fields
+from odoo import _, models, fields
 
 class CRMChecklist(models.Model):
     _name = 'crm.checklist'
-    _description = 'CRM Checklist'
+    _description = _('CRM Lead Checklist')
 
     name = fields.Char(required=True)
     is_checked = fields.Boolean(default=False)
-    lead_id = fields.Many2one('crm.lead', ondelete='cascade', string='Lead')
+    lead_id = fields.Many2one(
+        'crm.lead',
+        ondelete='cascade',
+        string=_('Lead')
+    )
+    config_id = fields.Many2one(
+        'crm.checklist.config',
+        required=True,
+        ondelete='restrict',
+        string=_('Item')
+    )
