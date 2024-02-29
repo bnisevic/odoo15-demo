@@ -1,0 +1,12 @@
+#chcklst_progress .o_progressbar {
+    width: 100%;
+}
+
+#chcklst_progress .o_progressbar .o_progress {
+    background-color: #e9ecef;
+    width: 80%;
+}
+
+#chcklst_progress .o_progressbar .o_progress .o_progressbar_complete {
+    background-color: #28a745;
+}
