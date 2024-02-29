@@ -10,3 +10,11 @@
 #chcklst_progress .o_progressbar .o_progress .o_progressbar_complete {
     background-color: #28a745;
 }
+
+.o_kanban_record_progress .o_progressbar .o_progress {
+    background-color: #e9ecef;
+}
+
+.o_kanban_record_progress .o_progressbar .o_progress .o_progressbar_complete {
+    background-color: #28a745;
+}

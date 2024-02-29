@@ -19,4 +19,16 @@
              </xpath>
         </field>
     </record>
+    <record id="view_crm_lead_kanban_checklist_progress" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.checklist.progress</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_kanban_record_bottom']" position="after">
+                <div class="o_kanban_record_progress">
+                    <field name="checklist_progress" widget="progressbar" />
+                </div>
+            </xpath>
+        </field>
+    </record>
 </odoo>
