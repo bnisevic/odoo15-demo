@@ -27,3 +27,19 @@ class CRMLead(models.Model):
                 'config_id': config.id,
             })
         return lead
+
+    def read(self, fields=None, load='_classic_read'):
+        result = super().read(fields, load)
+        for record in self:
+            checklist_config_ids = self.env['crm.checklist.config'].search([('user_id', '=', self.env.uid)])
+            for config in checklist_config_ids:
+                checklist_item = self.env['crm.checklist'].search([
+                    ('lead_id', '=', record.id),
+                    ('config_id', '=', config.id),
+                ], limit=1)
+                if not checklist_item:
+                    self.env['crm.checklist'].create({
+                        'lead_id': record.id,
+                        'config_id': config.id,
+                    })
+        return result

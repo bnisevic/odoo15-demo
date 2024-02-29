@@ -10,3 +10,8 @@ class CRMChecklistConfig(models.Model):
         string=_('User'),
         default=lambda self: self.env.uid
     )
+
+    def unlink(self):
+        related_checklists = self.env['crm.checklist'].search([('config_id', 'in', self.ids)])
+        related_checklists.unlink()
+        return super().unlink()
